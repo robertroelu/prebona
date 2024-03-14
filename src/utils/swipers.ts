@@ -1,22 +1,30 @@
 import 'swiper/css/bundle';
 
 import Swiper from 'swiper';
-import { Autoplay, EffectFade } from 'swiper/modules';
+import { Autoplay, EffectFade, Navigation } from 'swiper/modules';
 
 export const swipers = () => {
-  const swiperModules = [Autoplay, EffectFade];
+  const swiperModules = [Autoplay, EffectFade, Navigation];
 
   const swipersEl = document.querySelectorAll('[swiper-option]') as NodeListOf<HTMLElement>;
   if (!swipersEl) return;
 
   swipersEl.forEach((el) => {
     const elAttr = el.getAttribute('swiper-option');
+
     let settings = {};
     switch (elAttr) {
       case 'areas':
+        const elPrev = document.querySelector('[swiper-prev="areas"]');
+        const elNext = document.querySelector('[swiper-next="areas"]');
         settings = {
+          modules: swiperModules,
           slidesPerView: 3,
           spaceBetween: 32,
+          navigation: {
+            nextEl: elNext,
+            prevEl: elPrev,
+          },
           breakpoints: {
             320: {
               slidesPerView: 1.1,
@@ -84,6 +92,8 @@ export const swipers = () => {
         };
         break;
       }
+      default:
+        break;
     }
 
     const swiper = new Swiper(el, settings);
