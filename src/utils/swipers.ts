@@ -39,9 +39,15 @@ export const swipers = () => {
         };
         break;
       case 'testimonial': {
+        const elPrev = document.querySelector('[swiper-prev="testimonial"]');
+        const elNext = document.querySelector('[swiper-next="testimonial"]');
         settings = {
           slidesPerView: 1.5,
           spaceBetween: 32,
+          navigation: {
+            nextEl: elNext,
+            prevEl: elPrev,
+          },
           breakpoints: {
             320: {
               slidesPerView: 1.1,
@@ -57,9 +63,15 @@ export const swipers = () => {
         break;
       }
       case 'blog': {
+        const elPrev = document.querySelector('[swiper-prev="blog"]');
+        const elNext = document.querySelector('[swiper-next="blog"]');
         settings = {
           slidesPerView: 3,
           spaceBetween: 32,
+          navigation: {
+            nextEl: elNext,
+            prevEl: elPrev,
+          },
           breakpoints: {
             320: {
               slidesPerView: 1.1,
