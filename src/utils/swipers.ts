@@ -42,6 +42,7 @@ export const swipers = () => {
         const elPrev = document.querySelector('[swiper-prev="testimonial"]');
         const elNext = document.querySelector('[swiper-next="testimonial"]');
         settings = {
+          modules: swiperModules,
           slidesPerView: 1.5,
           spaceBetween: 32,
           navigation: {
@@ -66,6 +67,7 @@ export const swipers = () => {
         const elPrev = document.querySelector('[swiper-prev="blog"]');
         const elNext = document.querySelector('[swiper-next="blog"]');
         settings = {
+          modules: swiperModules,
           slidesPerView: 3,
           spaceBetween: 32,
           navigation: {
