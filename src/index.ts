@@ -9,6 +9,7 @@ import { linkblockedit } from '@finsweet/attributes-linkblockedit/';
 
 //Utils
 import { swipers } from '$utils/swipers';
+import { createdBy } from '$utils/createdBy';
 
 // console.log = function () {};
 
@@ -19,4 +20,5 @@ window.Webflow.push(() => {
 
   linkblockedit();
   swipers();
+  createdBy();
 });
